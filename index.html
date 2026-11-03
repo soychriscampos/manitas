@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf3">
+  <meta name="description" content="Manitas: yesitos personalizados para cada ocasión. Escuinapa, Rosario y Mazatlán, Sinaloa.">
+  <title>Manitas | Pinta, crea e imagina</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Manitas | Pinta, crea e imagina">
+  <meta property="og:description" content="Yesitos personalizados para cada ocasión. Escuinapa, Rosario y Mazatlán, Sinaloa.">
+  <meta property="og:image" content="assets/logo.jpg">
+  <meta property="og:image:alt" content="Logotipo colorido de Manitas">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Manitas | Pinta, crea e imagina">
+  <meta name="twitter:description" content="Yesitos personalizados para cada ocasión. Escuinapa, Rosario y Mazatlán, Sinaloa.">
+  <meta name="twitter:image" content="assets/logo.jpg">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <style>
+    :root { color-scheme: light; --ink: #262c35; --muted: #696e77; --cream: #fffaf3; --orange: #ff571c; --blue: #197bd1; --pink: #f25586; --yellow: #ffc323; --green: #46ae35; }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; overscroll-behavior-y: none; }
+    body { margin: 0; min-height: 100vh; min-height: 100svh; background: var(--cream); color: var(--ink); font-family: ui-rounded, 'Arial Rounded MT Bold', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; -webkit-font-smoothing: antialiased; overscroll-behavior-y: none; }
+    .page { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; overflow: hidden; }
+    main { position: relative; isolation: isolate; width: min(100% - 40px, 432px); margin: 0 auto; padding: 45px 0 12px; flex: 1 0 auto; text-align: center; }
+    .sprinkle { position: absolute; z-index: -1; border-radius: 999px; opacity: .95; }
+    .sprinkle.a { width: 13px; height: 13px; top: 62px; left: 13px; background: var(--yellow); }
+    .sprinkle.b { width: 9px; height: 25px; top: 174px; right: 4px; background: var(--pink); transform: rotate(35deg); }
+    .sprinkle.c { width: 9px; height: 9px; top: 288px; left: 2px; background: var(--green); }
+    .sprinkle.d { width: 19px; height: 7px; top: 386px; right: -5px; background: var(--blue); transform: rotate(-27deg); }
+    .logo-ring { width: 166px; height: 166px; padding: 5px; margin: 0 auto 23px; border-radius: 50%; background: white; box-shadow: 0 8px 30px rgba(41, 43, 47, .09); }
+    .logo { width: 100%; height: 100%; display: block; object-fit: cover; border-radius: 50%; }
+    h1 { font-size: clamp(31px, 8vw, 37px); line-height: 1.12; margin: 0 0 9px; font-weight: 850; letter-spacing: -.9px; }
+    .intro { margin: 0 auto 8px; max-width: 320px; color: #42464d; line-height: 1.5; font-size: 15.5px; font-weight: 500; }
+    .location { display: inline-flex; align-items: center; justify-content: center; gap: 5px; margin: 0 auto; color: var(--muted); font-size: 13px; font-weight: 550; line-height: 1.4; }
+    .location svg { width: 15px; height: 15px; flex: none; }
+    .links { display: grid; gap: 13px; margin-top: 37px; }
+    .link { width: 100%; display: flex; justify-content: center; align-items: center; gap: 11px; min-height: 62px; padding: 14px 20px; border: 2px solid var(--ink); border-radius: 19px; color: var(--ink); background: white; box-shadow: 4px 5px 0 var(--ink); font: inherit; font-size: 17px; font-weight: 750; text-decoration: none; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+    .link:hover { transform: translate(2px, 2px); box-shadow: 2px 3px 0 var(--ink); }
+    .link:active { transform: translate(4px, 5px); box-shadow: none; }
+    .link:focus-visible, .copy:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+    .link svg { width: 23px; height: 23px; flex: none; }
+    .instagram { background: #ffd1e1; }
+    .orders { background: #ffdb62; }
+    .bank-toggle { background: #cbe9ff; list-style: none; position: relative; }
+    .bank-toggle::-webkit-details-marker { display:none; }
+    .bank-toggle::marker { content: ''; }
+    .chevron { position: absolute; right: 19px; width: 19px!important; height: 19px!important; transition: transform .2s ease; }
+    details[open] .chevron { transform: rotate(180deg); }
+    .bank-panel { margin-top: 15px; background: white; border: 2px solid var(--ink); border-radius: 19px; padding: 21px 17px 10px; box-shadow: 4px 5px 0 var(--ink); text-align: left; }
+    .bank-heading { margin: 0 0 17px; text-align: center; font-size: 15px; font-weight: 800; }
+    .bank-heading span { color: var(--blue); }
+    .field { padding: 12px 0; border-top: 1px solid #e7e8e8; }
+    .field-label { display: block; margin: 0 0 6px; color: var(--muted); font-size: 11px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+    .field-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .value { overflow-wrap: anywhere; font-size: 14px; font-weight: 750; letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+    .copy { border: 1px solid #d9e3ed; border-radius: 10px; padding: 8px 10px; display: inline-flex; align-items: center; gap: 5px; color: #1669aa; background: #f1f8ff; font: inherit; font-size: 11px; font-weight: 800; cursor: pointer; flex: none; }
+    .copy svg { width: 14px; height: 14px; }
+    .bank-note { font-size: 12px; color: var(--muted); line-height: 1.5; margin: 15px 0 12px; text-align: center; }
+    .signoff { flex: 0 0 auto; margin: 0 auto 18px; color: #72767c; font-size: 12px; letter-spacing: .015em; text-align: center; }
+    .mosaic { display: grid; grid-template-columns: repeat(10, 1fr); flex: 0 0 58px; height: 58px; width: 100%; border-top: 4px solid #fff; }
+    .mosaic span { display: block; }
+    .mosaic span:nth-child(5n+1) { background: #198ad9; }
+    .mosaic span:nth-child(5n+2) { background: #fa4b1d; }
+    .mosaic span:nth-child(5n+3) { background: #49b139; }
+    .mosaic span:nth-child(5n+4) { background: #ffc424; }
+    .mosaic span:nth-child(5n) { background: #f46691; }
+    .mosaic span:nth-child(2n) { filter: saturate(1.09); }
+    .toast { position: fixed; z-index: 20; bottom: 78px; left: 50%; transform: translate(-50%, 16px); background: #26312b; color: white; padding: 11px 18px; border-radius: 99px; font-size: 13px; font-weight: 700; opacity: 0; pointer-events: none; transition: opacity .18s ease, transform .18s ease; white-space: nowrap; }
+    .toast.visible { opacity: 1; transform: translate(-50%, 0); }
+    @media (min-width: 680px) { main { padding-top: 45px; padding-bottom: 12px; } .logo-ring { width: 188px; height: 188px; } .mosaic { flex-basis: 75px; height: 75px; grid-template-columns: repeat(15, 1fr); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main>
+      <span class="sprinkle a" aria-hidden="true"></span><span class="sprinkle b" aria-hidden="true"></span><span class="sprinkle c" aria-hidden="true"></span><span class="sprinkle d" aria-hidden="true"></span>
+      <div class="logo-ring"><img class="logo" src="assets/logo.jpg" alt="Logotipo de Manitas: pinta, crea e imagina" width="166" height="166"></div>
+      <h1>¡Hola, somos Manitas!</h1>
+      <p class="intro">Yesitos personalizados para cada ocasión.</p>
+      <p class="location"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Escuinapa, Rosario y Mazatlán, Sinaloa</p>
+      <nav class="links" aria-label="Enlaces de Manitas">
+        <a class="link instagram" href="https://instagram.com/manitas_pinta" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="18" cy="6" r=".9" fill="currentColor" stroke="none"/></svg>Instagram</a>
+        <a class="link orders" href="https://wa.me/526691580963?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20yesitos." target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.1 11.6a8.1 8.1 0 0 1-11.8 7.2L3 20l1.3-5a8.1 8.1 0 1 1 15.8-3.4Z"/><path d="M8 9c1 3 3 5 6 6l2-1.5"/></svg>Hacer un pedido</a>
+        <details id="bank-details">
+          <summary class="link bank-toggle"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Datos bancarios<svg class="chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="bank-panel">
+            <p class="bank-heading">Transferencia bancaria · <span>BBVA</span></p>
+            <div class="field"><span class="field-label">CLABE interbancaria</span><div class="field-row"><span class="value">012320015101659136</span><button class="copy" type="button" data-copy="012320015101659136" aria-label="Copiar CLABE"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>Copiar</button></div></div>
+            <div class="field"><span class="field-label">Número de tarjeta</span><div class="field-row"><span class="value">4152 3146 2101 8350</span><button class="copy" type="button" data-copy="4152314621018350" aria-label="Copiar número de tarjeta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>Copiar</button></div></div>
+            <div class="field"><span class="field-label">Beneficiaria</span><div class="field-row"><span class="value">MARIA BELEN RIVERA MORALES</span><button class="copy" type="button" data-copy="MARIA BELEN RIVERA MORALES" aria-label="Copiar beneficiaria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>Copiar</button></div></div>
+            <p class="bank-note">Después de pagar, envíanos tu comprobante por WhatsApp para confirmar tu pedido.</p>
+          </div>
+        </details>
+      </nav>
+    </main>
+    <p class="signoff">By Belen Rivera</p>
+    <footer class="mosaic" aria-label="Mosaico de colores de Manitas"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></footer>
+  </div>
+  <div class="toast" role="status" aria-live="polite" id="toast"></div>
+  <script>
+    const toast = document.querySelector('#toast');
+    let toastTimer;
+    function announce(message) {
+      toast.textContent = message;
+      toast.classList.add('visible');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('visible'), 2300);
+    }
+    async function copyText(value) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(value);
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = value;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          const copied = document.execCommand('copy');
+          textarea.remove();
+          if (!copied) throw new Error('No se pudo copiar');
+        }
+        announce('¡Copiado al portapapeles!');
+      } catch {
+        announce('Mantén presionado el dato para copiarlo');
+      }
+    }
+    document.querySelectorAll('[data-copy]').forEach(button => {
+      button.addEventListener('click', () => copyText(button.dataset.copy));
+    });
+  </script>
+</body>
+</html>
